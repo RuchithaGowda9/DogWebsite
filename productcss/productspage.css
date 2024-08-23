@@ -1,0 +1,45 @@
+body {
+    background: url("../doodlebg.jpg") no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.card {
+    margin: 20px;
+    border: 2px solid #ccc;
+    flex: 1 1 30%;
+    max-width: 30%;
+    position: relative; /* Ensure the card is the reference for absolute positioning */
+}
+.card img {
+    width: 100%;
+    height: auto;
+}
+.card-img-top {
+    position: relative;
+}
+.card-body {
+    position: absolute;
+    display: none;
+    background: white;
+    z-index: 10000;
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: calc(100% - 20px); /* Adjust width to fit within the card */
+    top: 50%; /* Adjust position as needed */
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.card:hover .card-body {
+    display: block;
+    transition: 0.3s ease-in-out;
+}
